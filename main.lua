@@ -29,6 +29,6 @@ function love.keypressed(key)
 end
 
 function shoot()
-    table.insert(bullets, {circle.x, circle.y})
+    table.insert(bullets, {x = circle.x, y = circle.y})
     print("Bullets:", #bullets)
 end
