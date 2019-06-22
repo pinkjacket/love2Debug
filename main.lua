@@ -21,7 +21,7 @@ function love.draw()
     end
 end
 
-function love.keypressed()
+function love.keypressed(key)
   print("Key:", key)
     if key == "space" then
         shoot()
