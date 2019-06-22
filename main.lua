@@ -1,3 +1,6 @@
+io.stdout:setvbuf("no")
+-- this lets you get console output without closing your test instance, use it
+
 function love.load()
     circle = {x = 100, y = 100}
     bullets = {}
@@ -6,6 +9,7 @@ end
 function love.update(dt)
     for i,v in ipairs(bullets) do
         v.x = v.x + 400 * dt
+        print(v.x)
     end
 end
 
@@ -18,6 +22,7 @@ function love.draw()
 end
 
 function love.keypressed()
+  print("Key:", key)
     if key == "space" then
         shoot()
     end
@@ -25,4 +30,5 @@ end
 
 function shoot()
     table.insert(bullets, {circle.x, circle.y})
+    print("Bullets:", #bullets)
 end
